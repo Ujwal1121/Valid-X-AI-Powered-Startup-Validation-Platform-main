@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up - Valid-X</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/global.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/auth.css') }}"
+    />
+  </head>
+  <body>
+    <div class="auth-container">
+      <!-- Background Animation -->
+      <div class="background-animation">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
+
+      <!-- Auth Card -->
+      <div class="auth-card">
+        <div class="auth-header">
+          <a href="/home" class="back-link">← Back to Home</a>
+          <div class="logo">
+            <span class="logo-icon">🔍</span>
+            <span class="logo-text">Valid-X</span>
+          </div>
+          <h1>Create Account</h1>
+          <p>Start validating your startup ideas today</p>
+        </div>
+
+        <form id="signupForm" class="auth-form">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="John Doe"
+              required
+            />
+            <span class="input-icon">👤</span>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="your@email.com"
+              required
+            />
+            <span class="input-icon">📧</span>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Create a strong password"
+              required
+              minlength="6"
+            />
+            <span class="input-icon">🔒</span>
+            <button type="button" class="toggle-password" id="togglePassword">
+              <span class="show-icon">👁️</span>
+              <span class="hide-icon hidden">🙈</span>
+            </button>
+          </div>
+
+          <div class="password-strength">
+            <div class="strength-bar">
+              <div class="strength-fill" id="strengthFill"></div>
+            </div>
+            <span class="strength-text" id="strengthText"
+              >Password strength</span
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              placeholder="Confirm your password"
+              required
+            />
+            <span class="input-icon">✅</span>
+          </div>
+
+          <label class="checkbox-label">
+            <input type="checkbox" id="terms" required />
+            <span>I agree to the <a href="#">Terms & Conditions</a></span>
+          </label>
+
+          <button type="submit" class="btn-primary btn-full" id="signupBtn">
+            <span class="btn-text">Create Account</span>
+            <span class="btn-loader hidden"></span>
+          </button>
+
+          <div class="divider">
+            <span>or</span>
+          </div>
+
+          <div class="social-login">
+            <button type="button" class="social-btn">
+              <span>🔵</span> Sign up with Google
+            </button>
+            <button type="button" class="social-btn">
+              <span>📘</span> Sign up with Facebook
+            </button>
+          </div>
+
+          <p class="auth-switch">
+            Already have an account?
+            <a href="/login">Login here</a>
+          </p>
+        </form>
+
+        <!-- Error Message -->
+        <div id="errorMessage" class="error-message hidden"></div>
+      </div>
+
+      <!-- Theme Toggle -->
+      <button
+        id="themeToggle"
+        class="theme-toggle-floating"
+        aria-label="Toggle theme"
+      >
+        <span class="sun-icon">☀️</span>
+        <span class="moon-icon">🌙</span>
+      </button>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/theme.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+  </body>
+</html>

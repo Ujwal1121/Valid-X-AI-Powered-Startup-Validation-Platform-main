@@ -1,0 +1,115 @@
+<!--index.html-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VettIQ - Startup Idea Validation Tool</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header Section -->
+      <header class="header">
+        <div class="logo">
+          <span class="icon">🔍</span>
+          <h1>VettIQ</h1>
+        </div>
+        <p class="subtitle">AI-Powered Startup Idea Validation</p>
+      </header>
+
+      <!-- Input Section -->
+      <div class="input-section">
+        <h2>Enter Your Startup Idea</h2>
+        <p class="description">
+          Get comprehensive market analysis, competitor research, risk
+          assessment, and strategic advice
+        </p>
+        <textarea
+          id="startupIdea"
+          placeholder="Describe your startup idea in detail..."
+          rows="6"
+        ></textarea>
+        <button id="validateBtn" class="validate-btn">
+          <span class="btn-text">Validate Idea</span>
+          <span class="btn-icon">→</span>
+        </button>
+      </div>
+
+      <!-- Loading Animation -->
+      <div id="loadingSection" class="loading-section hidden">
+        <div class="spinner-container">
+          <div class="spinner"></div>
+          <div class="loading-dots">
+            <span>.</span><span>.</span><span>.</span>
+          </div>
+        </div>
+        <p class="loading-text">Analyzing your startup idea</p>
+        <p class="loading-subtext">This may take 30-60 seconds</p>
+      </div>
+
+      <!-- Results Section -->
+      <div id="resultsSection" class="results-section hidden">
+        <!-- Decision Banner -->
+        <div id="decisionBanner" class="decision-banner"></div>
+
+        <!-- Advice Card -->
+        <div class="result-card advice-card">
+          <div class="card-header">
+            <span class="card-icon">💡</span>
+            <h3>Strategic Advice</h3>
+          </div>
+          <div id="adviceContent" class="card-content"></div>
+        </div>
+
+        <!-- Analysis Cards -->
+        <div class="analysis-grid">
+          <!-- Market Analysis -->
+          <div class="result-card">
+            <div class="card-header">
+              <span class="card-icon">📊</span>
+              <h3>Market Analysis</h3>
+            </div>
+            <div id="marketContent" class="card-content"></div>
+          </div>
+
+          <!-- Competition Analysis -->
+          <div class="result-card">
+            <div class="card-header">
+              <span class="card-icon">⚔️</span>
+              <h3>Competition Analysis</h3>
+            </div>
+            <div id="competitionContent" class="card-content"></div>
+          </div>
+
+          <!-- Risk Assessment -->
+          <div class="result-card">
+            <div class="card-header">
+              <span class="card-icon">⚠️</span>
+              <h3>Risk Assessment</h3>
+            </div>
+            <div id="riskContent" class="card-content"></div>
+          </div>
+        </div>
+
+        <!-- New Analysis Button -->
+        <button id="newAnalysisBtn" class="new-analysis-btn">
+          Analyze Another Idea
+        </button>
+      </div>
+
+      <!-- Error Section -->
+      <div id="errorSection" class="error-section hidden">
+        <div class="error-icon">❌</div>
+        <h3>Validation Failed</h3>
+        <p id="errorMessage"></p>
+        <button id="retryBtn" class="retry-btn">Try Again</button>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

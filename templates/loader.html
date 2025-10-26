@@ -1,0 +1,141 @@
+<!-- loader.html - Ultra Professional Version -->
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valid-X - AI Validation Platform</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/loader.css') }}"
+    />
+  </head>
+  <body>
+    <div class="loader-container">
+      <!-- Subtle Background Effects -->
+      <div class="bg-grid"></div>
+      <div class="bg-gradient gradient-1"></div>
+      <div class="bg-gradient gradient-2"></div>
+
+      <!-- Main Loader Section -->
+      <div class="loader-content">
+        <!-- Modern Ring Loader -->
+        <div class="loader-animation">
+          <div class="ring-container">
+            <div class="ring ring-outer"></div>
+            <div class="ring ring-middle"></div>
+            <div class="ring ring-inner"></div>
+            <div class="center-pulse"></div>
+          </div>
+        </div>
+
+        <!-- Brand Identity -->
+        <div class="brand-section">
+          <h1 class="brand-name">Valid-X</h1>
+          <p class="brand-tagline">AI-Powered Startup Validation</p>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+          <div class="progress-bar">
+            <div class="progress-fill"></div>
+            <div class="progress-shimmer"></div>
+          </div>
+          <div class="progress-percentage">0%</div>
+        </div>
+
+        <!-- Loading Status Messages -->
+        <div class="status-messages">
+          <p class="status-text active" data-step="1">
+            <span class="status-icon">🔍</span>
+            Initializing AI Systems
+          </p>
+          <p class="status-text" data-step="2">
+            <span class="status-icon">🧠</span>
+            Loading Neural Networks
+          </p>
+          <p class="status-text" data-step="3">
+            <span class="status-icon">📊</span>
+            Preparing Analytics Engine
+          </p>
+          <p class="status-text" data-step="4">
+            <span class="status-icon">⚡</span>
+            Optimizing Performance
+          </p>
+          <p class="status-text" data-step="5">
+            <span class="status-icon">✓</span>
+            System Ready
+          </p>
+        </div>
+
+        <!-- Tech Info Footer -->
+        <div class="tech-footer">
+          <div class="tech-badge">
+            <span class="badge-icon">⚡</span>
+            <span class="badge-text">Powered by Google Gemini AI</span>
+          </div>
+          <div class="tech-badge">
+            <span class="badge-icon">🔒</span>
+            <span class="badge-text">Secure & Private</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Professional Loader Logic
+      let progress = 0;
+      let currentStep = 0;
+      const progressFill = document.querySelector(".progress-fill");
+      const progressPercentage = document.querySelector(".progress-percentage");
+      const statusTexts = document.querySelectorAll(".status-text");
+      const totalSteps = statusTexts.length;
+
+      // Smooth progress animation
+      const progressInterval = setInterval(() => {
+        // Realistic progress increment
+        const increment = Math.random() * 4 + 1;
+        progress = Math.min(progress + increment, 100);
+
+        // Update progress bar
+        progressFill.style.width = progress + "%";
+        progressPercentage.textContent = Math.floor(progress) + "%";
+
+        // Update status messages based on progress
+        const stepThreshold = 100 / totalSteps;
+        const newStep = Math.floor(progress / stepThreshold);
+
+        if (newStep > currentStep && newStep < totalSteps) {
+          statusTexts[currentStep].classList.remove("active");
+          statusTexts[currentStep].classList.add("completed");
+          currentStep = newStep;
+          statusTexts[currentStep].classList.add("active");
+        }
+
+        // Complete loading
+        if (progress >= 100) {
+          clearInterval(progressInterval);
+          statusTexts[currentStep].classList.remove("active");
+          statusTexts[currentStep].classList.add("completed");
+
+          setTimeout(() => {
+            document.querySelector(".loader-container").style.animation =
+              "fadeOut 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards";
+
+            setTimeout(() => {
+              window.location.href = "/home";
+            }, 800);
+          }, 500);
+        }
+      }, 60);
+
+      // Prevent accidental page leave during loading
+      window.addEventListener("beforeunload", (e) => {
+        if (progress < 100) {
+          e.preventDefault();
+          e.returnValue = "";
+        }
+      });
+    </script>
+  </body>
+</html>
