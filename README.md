@@ -37,62 +37,62 @@
 
 ## 📁 **Project Structure**
 
+Project Structure
+
 valid-x/
-├── main.py # FastAPI backend entry point
-├── app.py # Flask frontend server
-├── requirements.txt # Python dependencies
-├── README.md # This file
-│
-├── config.py # Configuration (API keys, model settings)
-├── .env # Environment variables (API keys)
+├── main.py                          # FastAPI backend entry point
+├── app.py                           # Flask frontend server
+├── requirements.txt                 # Python dependencies
+├── README.md                        # This file
+├── config.py                        # Configuration (API keys, model settings)
+├── .env                             # Environment variables (API keys)
 │
 ├── models/
-│ └── chat_model.py # LLM initialization (HuggingFace)
+│   └── chat_model.py               # LLM initialization (HuggingFace)
 │
-├── nodes/ # AI Agent implementations
-│ ├── market_analyst.py # Agent 1: Market analysis
-│ ├── competitor_analysis.py # Agent 2: Competition analysis
-│ ├── risk_assessor.py # Agent 3: Risk assessment
-│ ├── competitor_intelligence.py # Agent 4: Structured competitor data
-│ ├── financial_viability.py # Agent 5: Financial metrics
-│ ├── advisor.py # Agent 6: Strategic recommendations
-│ ├── investor_decision.py # Agent 7: Investment decision
-│ └── startup_validator.py # Pre-validation filter
+├── nodes/                           # AI Agent implementations
+│   ├── market_analyst.py           # Agent 1: Market analysis
+│   ├── competitor_analysis.py      # Agent 2: Competition analysis
+│   ├── risk_assessor.py            # Agent 3: Risk assessment
+│   ├── competitor_intelligence.py  # Agent 4: Structured competitor data
+│   ├── financial_viability.py      # Agent 5: Financial metrics
+│   ├── advisor.py                  # Agent 6: Strategic recommendations
+│   ├── investor_decision.py        # Agent 7: Investment decision
+│   └── startup_validator.py        # Pre-validation filter
 │
 ├── graphs/
-│ └── workflow.py # LangGraph workflow orchestration
+│   └── workflow.py                 # LangGraph workflow orchestration
 │
 ├── state/
-│ └── agent_state.py # Shared state management
+│   └── agent_state.py              # Shared state management
 │
 ├── tools/
-│ └── web_search_tool.py # DuckDuckGo web search integration
+│   └── web_search_tool.py          # DuckDuckGo web search integration
 │
-├── prompts/ # LLM prompt templates
-│ ├── market_analyst.txt
-│ ├── competitor_analyst_prompt.txt
-│ ├── risk_assessor.txt
-│ ├── competitor_intelligence.txt
-│ ├── financial_viability.txt
-│ ├── advisor.txt
-│ └── investor_decision.txt
+├── prompts/                         # LLM prompt templates
+│   ├── market_analyst.txt
+│   ├── competitor_analyst_prompt.txt
+│   ├── risk_assessor.txt
+│   ├── competitor_intelligence.txt
+│   ├── financial_viability.txt
+│   ├── advisor.txt
+│   └── investor_decision.txt
 │
-├── templates/ # HTML templates (Flask)
-│ ├── analysis.html
-│ ├── index.html
-│ ├── login.html
-│ └── signup.html
+├── templates/                       # HTML templates (Flask)
+│   ├── analysis.html
+│   ├── index.html
+│   ├── login.html
+│   └── signup.html
 │
-└── static/ # Frontend assets
-├── css/
-│ ├── styles.css
-│ └── theme.css
-├── js/
-│ ├── analysis.js
-│ └── theme.js
-└── images/
+└── static/                          # Frontend assets
+    ├── css/
+    │   ├── styles.css
+    │   └── theme.css
+    ├── js/
+    │   ├── analysis.js
+    │   └── theme.js
+    └── images/
 
-text
 
 ---
 
