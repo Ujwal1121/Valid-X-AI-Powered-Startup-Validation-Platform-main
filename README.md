@@ -415,30 +415,5 @@ We welcome contributions! Please follow these steps:
 
 ---
 
-## 🔮 **Roadmap**
-
-### **v1.1 (Coming Soon)**
-
-- [ ] Support for multiple LLM providers (OpenAI, Anthropic, Cohere)
-- [ ] Real-time collaboration features
-- [ ] Export to PowerPoint/Google Slides
-- [ ] Email report delivery
-
-### **v1.2**
-
-- [ ] Comparative analysis (multiple startups)
-- [ ] Historical analysis tracking
-- [ ] API endpoints for third-party integrations
-- [ ] Mobile app (iOS/Android)
-
-### **v2.0**
-
-- [ ] AI-powered pitch deck generator
-- [ ] Investor matching algorithm
-- [ ] Market trend predictions
-- [ ] Integration with CRM systems (HubSpot, Salesforce)
-
----
-
 **Built with ❤️ by the Valid-X Team**
 # Valid-X-AI-Powered-Startup-Validation-Platform-main
